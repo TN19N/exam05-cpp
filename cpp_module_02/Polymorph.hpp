@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   Polymorph.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 16:57:28 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:14:00 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WARLOCK_HPP
+#ifndef POLYMORPH_HPP
 
-# define WARLOCK_HPP
+# define POLYMORPH_HPP
 
-# include "ATarget.hpp"
 # include "ASpell.hpp"
 # include <iostream>
 # include <string>
 
-class Warlock
+class Polymorph : public ASpell
 {
-	private:
-		std::string name;
-		std::string title;
-		ASpell**    spells;
-		int         number_of_spells;
 	public:
-		Warlock(const std::string& name, const std::string& title);
-		~Warlock(void);
+		Polymorph(void);
+		Polymorph(const Polymorph& other);
+		~Polymorph(void);
+
+		Polymorph& operator = (const Polymorph& other);
 
 	public:
-		const std::string& getName(void) const;
-		const std::string& getTitle(void) const;
-
-	public:
-		void setTitle(const std::string& new_title);
-		void introduce() const;
-	
-	public:
-		void learnSpell(ASpell* spell);
-		void forgetSpell(const std::string& name);
-		void launchSpell(const std::string& name, ATarget& target) const;
+		ASpell* clone(void) const;
 };
 
-# endif
+#endif

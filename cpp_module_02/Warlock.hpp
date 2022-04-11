@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 16:57:28 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:31:22 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define WARLOCK_HPP
 
+# include "SpellBook.hpp"
 # include "ATarget.hpp"
 # include "ASpell.hpp"
 # include <iostream>
@@ -24,8 +25,7 @@ class Warlock
 	private:
 		std::string name;
 		std::string title;
-		ASpell**    spells;
-		int         number_of_spells;
+		SpellBook book;
 	public:
 		Warlock(const std::string& name, const std::string& title);
 		~Warlock(void);

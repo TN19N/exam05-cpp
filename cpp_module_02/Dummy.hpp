@@ -1,47 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   Dummy.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 16:57:28 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 14:43:33 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WARLOCK_HPP
+#ifndef DUMMY_HPP
 
-# define WARLOCK_HPP
+# define DUMMY_HPP
 
 # include "ATarget.hpp"
-# include "ASpell.hpp"
 # include <iostream>
 # include <string>
 
-class Warlock
+class Dummy : public ATarget
 {
-	private:
-		std::string name;
-		std::string title;
-		ASpell**    spells;
-		int         number_of_spells;
 	public:
-		Warlock(const std::string& name, const std::string& title);
-		~Warlock(void);
+		Dummy(void);
+		Dummy(const Dummy& other);
+		~Dummy(void);
+
+		Dummy& operator = (const Dummy& other);
 
 	public:
-		const std::string& getName(void) const;
-		const std::string& getTitle(void) const;
-
-	public:
-		void setTitle(const std::string& new_title);
-		void introduce() const;
-	
-	public:
-		void learnSpell(ASpell* spell);
-		void forgetSpell(const std::string& name);
-		void launchSpell(const std::string& name, ATarget& target) const;
+		ATarget* clone(void) const;
 };
 
-# endif
+#endif

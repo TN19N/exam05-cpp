@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   SpellBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 16:57:28 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:36:30 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WARLOCK_HPP
+#ifndef SPELLBOOK_HPP
 
-# define WARLOCK_HPP
+# define SPELLBOOK_HPP
 
-# include "ATarget.hpp"
 # include "ASpell.hpp"
-# include <iostream>
 # include <string>
 
-class Warlock
+class SpellBook
 {
 	private:
-		std::string name;
-		std::string title;
 		ASpell**    spells;
 		int         number_of_spells;
 	public:
-		Warlock(const std::string& name, const std::string& title);
-		~Warlock(void);
-
-	public:
-		const std::string& getName(void) const;
-		const std::string& getTitle(void) const;
-
-	public:
-		void setTitle(const std::string& new_title);
-		void introduce() const;
+		SpellBook(void);
+		~SpellBook(void);
 	
 	public:
 		void learnSpell(ASpell* spell);
 		void forgetSpell(const std::string& name);
-		void launchSpell(const std::string& name, ATarget& target) const;
+		ASpell* createSpell(const std::string& name) const;
 };
 
 # endif
