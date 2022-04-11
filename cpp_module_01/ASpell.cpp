@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:18:13 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 03:03:22 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 14:49:31 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ const std::string& ASpell::getName(void) const
 const std::string& ASpell::getEffects(void) const
 {
 	return (this->effects);
+}
+
+void ASpell::launch(const ATarget& target) const
+{
+	target.getHitBySpell(*this);
 }

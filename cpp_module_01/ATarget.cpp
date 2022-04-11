@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 03:06:49 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 03:08:50 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 15:50:16 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,7 @@ const std::string& ATarget::getType(void) const
 	return (this->type);
 }
 
-void 
+void ATarget::getHitBySpell(const ASpell& spell) const
+{
+	std::cout << this->type << " has been " << spell.getEffects() << "!" << std::endl;
+}

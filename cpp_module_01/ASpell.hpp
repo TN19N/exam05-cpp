@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 02:59:48 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 15:59:27 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 # define ASPELL_HPP
 
+# include "ATarget.hpp"
 # include <iostream>
 # include <string>
+
+class ATarget;
 
 class ASpell
 {
@@ -26,14 +29,17 @@ class ASpell
 		ASpell(void);
 		ASpell(const std::string& name, const std::string& effects);
 		ASpell(const ASpell& other);
-		~ASpell(void);
+		virtual ~ASpell(void);
 
 		ASpell& operator = (const ASpell& other);
 
 	public:
 		const std::string& getName(void) const;
 		const std::string& getEffects(void) const;
+		void launch(const ATarget& target) const;
 
+	public:
+		virtual ASpell* clone(void) const = 0;
 };
 
 # endif

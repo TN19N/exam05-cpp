@@ -6,24 +6,28 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:25:50 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 02:26:44 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 16:04:32 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "Fwoosh.hpp"
+# include "Dummy.hpp"
 # include "Warlock.hpp"
 
 int main()
 {
-	Warlock const richard("Richard", "Mistress of Magma");
-	richard.introduce();
-	std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
+  Warlock richard("Richard", "the Titled");
 
-	Warlock* jack = new Warlock("Jack", "the Long");
-	jack->introduce();
-	jack->setTitle("the Mighty");
-	jack->introduce();
+  Dummy bob;
+  Fwoosh* fwoosh = new Fwoosh();
 
-  	delete jack;
+  richard.learnSpell(fwoosh);
 
-	return (0);
+  richard.introduce();
+  richard.launchSpell("Fwoosh", bob);
+
+  richard.forgetSpell("Fwoosh");
+  richard.launchSpell("Fwoosh", bob);
+  
+  return (0);
 }

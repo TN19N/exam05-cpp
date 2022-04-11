@@ -6,9 +6,11 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 03:06:40 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/11 15:59:04 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef ATARGET_HPP
 
@@ -17,6 +19,8 @@
 # include "ASpell.hpp"
 # include <iostream>
 # include <string>
+
+class ASpell;
 
 class ATarget
 {
@@ -32,8 +36,10 @@ class ATarget
 		
 	public:
 		const std::string& getType(void) const;
-		void getHitBySpell(const ASpell& spell);
+		void getHitBySpell(const ASpell& spell) const;
 
+	public:
+		virtual ATarget* clone(void) const = 0;
 };
 
 # endif
