@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:09:51 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 16:57:28 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/15 23:24:49 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 # include "ASpell.hpp"
 # include <iostream>
 # include <string>
+# include <vector>
+# include <algorithm>
 
 class Warlock
 {
 	private:
 		std::string name;
 		std::string title;
-		ASpell**    spells;
-		int         number_of_spells;
+		std::vector<ASpell*> spells;
 	public:
 		Warlock(const std::string& name, const std::string& title);
 		~Warlock(void);

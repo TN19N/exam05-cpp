@@ -6,7 +6,7 @@
 /*   By: mannouao <mannouao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 02:25:50 by mannouao          #+#    #+#             */
-/*   Updated: 2022/04/11 02:26:44 by mannouao         ###   ########.fr       */
+/*   Updated: 2022/04/15 17:33:12 by mannouao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int main()
 	jack->introduce();
 	jack->setTitle("the Mighty");
 	jack->introduce();
-
-  	delete jack;
 
 	return (0);
 }
